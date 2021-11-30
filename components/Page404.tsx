@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 
 export const Page404: React.FC<types.PageProps> = ({ site, pageId, error }) => {
   const title = site?.name || 'Notion Page Not Found'
-
+  // TODO: change 404 icon
   return (
     <>
       <PageHead site={site} />
@@ -21,20 +21,12 @@ export const Page404: React.FC<types.PageProps> = ({ site, pageId, error }) => {
 
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1>Notion Page Not Found</h1>
-
-          {error ? (
-            <p>{error.message}</p>
-          ) : (
-            pageId && (
-              <p>
-                Make sure that Notion page "{pageId}" is publicly accessible.
-              </p>
-            )
-          )}
-
+          <h1>Page Not Found</h1>
+          <p>
+            We are building the future...
+          </p>
           <img
-            src='/404.png'
+            src='/404.jpg'
             alt='404 Not Found'
             className={styles.errorImage}
           />

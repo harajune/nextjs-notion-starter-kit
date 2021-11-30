@@ -24,7 +24,7 @@ export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
 
           {statusCode && <p>Error code: {statusCode}</p>}
 
-          <img src='/error.png' alt='Error' className={styles.errorImage} />
+          <img src='/error.jpg' alt='Error' className={styles.errorImage} />
         </main>
       </div>
     </>

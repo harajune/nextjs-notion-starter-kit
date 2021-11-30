@@ -8,7 +8,7 @@ import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-coy.css'
 
 // this might be better for dark mode
-// import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/themes/prism-okaidia.css'
 
 // used for collection views selector (optional)
 // TODO: re-add if we enable collection view dropdowns
@@ -18,7 +18,7 @@ import 'prismjs/themes/prism-coy.css'
 import 'katex/dist/katex.min.css'
 
 // core styles for static tweet renderer (optional)
-import 'react-static-tweets/styles.css'
+// import 'react-static-tweets/styles.css'
 
 // global style overrides for notion
 import 'styles/notion.css'

@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons'
 
 export default class MyDocument extends Document {
   render() {
+    // TODO: add icons
     return (
       <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         <Html lang='en'>
