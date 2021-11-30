@@ -12,7 +12,7 @@ module.exports = {
   author: 'Jun Harada',
 
   // open graph metadata (optional)
-  // description: 'IT・技術・経営コンサルを行う',
+  description: 'IT・技術・経営コンサルを行うマーケットマイニングのコーポレートページです',
   // socialImageTitle: 'Transitive Bullshit',
   // socialImageSubtitle: 'Hello World! 👋',
 
