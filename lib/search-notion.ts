@@ -10,7 +10,6 @@ export const searchNotion = pMemoize(searchNotionImpl, { maxAge: 10000 })
 async function searchNotionImpl(
   params: types.SearchParams
 ): Promise<types.SearchResults> {
-  console.log(api.searchNotion)
   return fetch(api.searchNotion, {
     method: 'POST',
     body: JSON.stringify(params),
