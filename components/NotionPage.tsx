@@ -269,6 +269,16 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapNotionImageUrl}
         searchNotion={searchNotion}
+        navigationHeader={
+          <>
+            <Link href='/fd1dded8884641ac85542cd5f65694da'>
+              <span className='nav-link'>実績</span>
+            </Link>
+            <Link href='/78b7b0b82de343779c6d2cd00f0e16e6'>
+            <span className='nav-link'>当社について</span>
+            </Link>
+          </>
+        }
         pageFooter={comments}
         pageAside={pageAside}
         footer={
