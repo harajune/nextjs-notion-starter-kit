@@ -8,7 +8,7 @@ module.exports = {
 
   // basic site info (required)
   name: 'Market Mining, Inc.',
-  domain: 'www.market-mining.tech',
+  domain: 'test.market-mining.tech',
   author: 'Jun Harada',
 
   // open graph metadata (optional)

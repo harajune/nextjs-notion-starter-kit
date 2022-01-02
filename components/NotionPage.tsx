@@ -12,7 +12,7 @@ import { PageBlock } from 'notion-types'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
+import { NotionRenderer, Code, Collection, CollectionRow, useNotionContext, SearchDialog } from 'react-notion-x'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -70,6 +70,65 @@ const Modal = dynamic(
   () => import('react-notion-x').then((notion) => notion.Modal),
   { ssr: false }
 )
+
+function CustomHeader({ headerComponents }) {
+  const {
+    recordMap,
+    rootPageId,
+    searchNotion,
+  } = useNotionContext()
+  const blockMap = recordMap.block
+  const blockIds = Object.keys(blockMap)
+  const activePageId = blockIds[0]
+
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false)
+  const onOpenSearch = React.useCallback(() => {
+    setIsSearchOpen(true)
+  }, [])
+  const onCloseSearch = React.useCallback(() => {
+    setIsSearchOpen(false)
+  }, [])
+
+  const hasSearch = !!searchNotion
+
+
+  return (
+    <header className='notion-header'>
+      <div className='nav-header'>
+        {headerComponents[0]}
+        <div className=''>
+          <Link href='/fd1dded8884641ac85542cd5f65694da'>
+            <span className='title button breadcrumb' role='button'>
+              実績
+            </span>
+          </Link>
+          <Link href='/78b7b0b82de343779c6d2cd00f0e16e6'>
+            <span className='title button breadcrumb' role='button'>
+              当社について
+            </span>
+          </Link>
+          <div
+            role='button'
+            className={cs('breadcrumb', 'button', 'notion-search-button')}
+            onClick={onOpenSearch}
+          >
+            <span className='title'>Search</span>
+          </div>
+          <React.Fragment key={'search'}>
+            {isSearchOpen && hasSearch && (
+              <SearchDialog
+                isOpen={isSearchOpen}
+                rootBlockId={rootPageId || activePageId}
+                onClose={onCloseSearch}
+                searchNotion={searchNotion}
+              />
+            )}
+          </React.Fragment>
+        </div>
+      </div>
+    </header>
+  )
+}
 
 export const NotionPage: React.FC<types.PageProps> = ({
   site,
@@ -160,25 +219,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
     }
   } else {
     pageAside = <PageSocial />
-  }
-
-  function CustomHeader({ headerComponents }) {
-    return (
-      <header className='notion-header'>
-        <div className='nav-header'>
-          {headerComponents[0]}
-          <div>
-            <Link href='/fd1dded8884641ac85542cd5f65694da'>
-              <span className='title button breadcrumb' role="button">実績</span>
-            </Link>
-            <Link href='/78b7b0b82de343779c6d2cd00f0e16e6'>
-              <span className='title button breadcrumb' role="button">当社について</span>
-            </Link>
-          </div>
-          {headerComponents[1]}
-        </div>
-      </header>
-    )
   }
 
   return (
