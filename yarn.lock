@@ -152,7 +152,7 @@
   resolved "https://registry.yarnpkg.com/@matejmazur/react-katex/-/react-katex-3.1.3.tgz#f07404c848b93bfef9ed9653a4bb080dc8bf2bf0"
   integrity sha512-rBp7mJ9An7ktNoU653BWOYdO4FoR4YNwofHZi+vaytX/nWbIlmHVIF+X8VFOn6c3WYmrLT5FFBjKqCZ1sjR5uQ==
 
-"@mm-tech-inc/react-notion-x-4-12-2@npm:@mm-tech-inc/react-notion-x@^4.12.4":
+"@mm-tech-inc/react-notion-x-4-12-4@npm:@mm-tech-inc/react-notion-x@^4.12.4", "react-notion-x@npm:@mm-tech-inc/react-notion-x@^4.12.4":
   version "4.12.4"
   resolved "https://npm.pkg.github.com/download/@mm-tech-inc/react-notion-x/4.12.4/7da4658d1ec31dfff6171cf72cc04dc85a54935ac907a99859b35308b8f9ef0f#479dd8b5292c265361b64f846dbb8c8ec0ac8d2a"
   integrity sha512-jsgVrCmSxbE9eDt4O/K8pxic/1vjcqle76XBwK2KclVDeiDJCP0qPwQg4SLTOULZZBpR7kEyA6pH2BUlgY+31w==
@@ -4587,30 +4587,6 @@ react-modal@^3.14.3:
     prop-types "^15.7.2"
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
-
-"react-notion-x@npm:@mm-tech-inc/react-notion-x@^4.12.2":
-  version "4.12.2"
-  resolved "https://npm.pkg.github.com/download/@mm-tech-inc/react-notion-x/4.12.2/cc48663f5e2f49c66220c8642dc1461a1ee86967f2e5f6fffcaa8d71824ab474#a206b0d1f503004eb8b87d71a0a4c3baba0cfbf6"
-  integrity sha512-7o3WliNsgdsLRKdzVaFNDf4kMxdGT5SjpQDc3Qfr3RFdjT7M7O/0E8271apr70jrZPUsZwFYHxnumzBcrn3Zqg==
-  dependencies:
-    "@matejmazur/react-katex" "^3.1.3"
-    date-fns "^2.15.0"
-    format-number "^3.0.0"
-    is-url-superb "4"
-    katex "^0.13.18"
-    lodash.throttle "^4.1.1"
-    medium-zoom "^1.0.6"
-    notion-types "^4.10.0"
-    notion-utils "^4.12.0"
-    prismjs "^1.20.0"
-    rc-dropdown "^3.1.2"
-    rc-menu "^9.0.14"
-    react-hotkeys-hook "^3.0.3"
-    react-image "^4.0.3"
-    react-lazy-images "^1.1.0"
-    react-modal "^3.14.3"
-    react-pdf "^5.4.1"
-    react-use "^17.3.1"
 
 react-pdf@^5.4.1:
   version "5.4.1"
