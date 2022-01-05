@@ -172,7 +172,7 @@
 
 .notion-collection-row-property .notion-property {
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .notion-collection-row-value {
@@ -325,6 +325,8 @@
 .notion-header {
   background: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: saturate(180%) blur(16px);
+  z-index: 3;
+  overflow: visible;
 }
 
 .notion-header .nav-link {
@@ -341,4 +343,115 @@
 .notion-bookmark:hover {
   border-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
   border-image-slice: 1;
+}
+
+/* drop down menu */
+
+.notion-header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.notion-header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.notion-header li a:hover,
+.notion-header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.notion-header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.notion-header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.notion-header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.notion-header .menu-icon .navicon:before,
+.notion-header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.notion-header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.notion-header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.notion-header .menu-btn {
+  display: none;
+}
+
+.notion-header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.notion-header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.notion-header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.notion-header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.notion-header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.notion-header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .notion-header li {
+    float: left;
+  }
+  .notion-header li a {
+    padding: 20px 30px;
+  }
+  .notion-header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .notion-header .menu-icon {
+    display: none;
+  }
 }

@@ -12,7 +12,15 @@ import { PageBlock } from 'notion-types'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { NotionRenderer, Code, Collection, CollectionRow, useNotionContext, SearchDialog } from 'react-notion-x'
+import {
+  NotionRenderer,
+  Code,
+  Collection,
+  CollectionRow,
+  useNotionContext,
+  SearchDialog,
+  SearchIcon
+} from 'react-notion-x'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -72,11 +80,7 @@ const Modal = dynamic(
 )
 
 function CustomHeader({ headerComponents }) {
-  const {
-    recordMap,
-    rootPageId,
-    searchNotion,
-  } = useNotionContext()
+  const { recordMap, rootPageId, searchNotion } = useNotionContext()
   const blockMap = recordMap.block
   const blockIds = Object.keys(blockMap)
   const activePageId = blockIds[0]
@@ -91,29 +95,38 @@ function CustomHeader({ headerComponents }) {
 
   const hasSearch = !!searchNotion
 
-
   return (
     <header className='notion-header'>
       <div className='nav-header'>
         {headerComponents[0]}
-        <div className=''>
-          <Link href='/fd1dded8884641ac85542cd5f65694da'>
-            <span className='title button breadcrumb' role='button'>
-              実績
-            </span>
-          </Link>
-          <Link href='/78b7b0b82de343779c6d2cd00f0e16e6'>
-            <span className='title button breadcrumb' role='button'>
-              当社について
-            </span>
-          </Link>
-          <div
-            role='button'
-            className={cs('breadcrumb', 'button', 'notion-search-button')}
-            onClick={onOpenSearch}
-          >
-            <span className='title'>Search</span>
-          </div>
+        <div>
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
+          <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+          <ul className='menu'>
+            <li>
+              <Link href='/fd1dded8884641ac85542cd5f65694da'>
+                <span className='title button breadcrumb' role='button'>
+                  実績
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href='/78b7b0b82de343779c6d2cd00f0e16e6'>
+                <span className='title button breadcrumb' role='button'>
+                  当社について
+                </span>
+              </Link>
+            </li>
+            <li>
+              <span
+                role='button'
+                className={cs('breadcrumb', 'button')}
+                onClick={onOpenSearch}
+              >
+                <span className='title'>Search</span>
+              </span>
+            </li>
+          </ul>
           <React.Fragment key={'search'}>
             {isSearchOpen && hasSearch && (
               <SearchDialog
