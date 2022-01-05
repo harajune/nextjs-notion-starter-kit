@@ -118,6 +118,13 @@ function CustomHeader({ headerComponents }) {
               </Link>
             </li>
             <li>
+              <Link href='/b7702c1837b2449085e52ed4387be352'>
+                <span className='title button breadcrumb' role='button'>
+                お問合せ
+                </span>
+              </Link>
+            </li>
+            <li>
               <span
                 role='button'
                 className={cs('breadcrumb', 'button')}
