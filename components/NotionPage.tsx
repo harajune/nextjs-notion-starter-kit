@@ -101,7 +101,7 @@ function CustomHeader({ headerComponents }) {
         {headerComponents[0]}
         <div>
           <input className="menu-btn" type="checkbox" id="menu-btn" />
-          <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+          <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
           <ul className='menu'>
             <li>
               <Link href='/fd1dded8884641ac85542cd5f65694da'>
