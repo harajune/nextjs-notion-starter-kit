@@ -44,6 +44,7 @@
 .notion-header .nav-header {
   max-width: 1100px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .notion-gallery-grid {
@@ -172,7 +173,7 @@
 
 .notion-collection-row-property .notion-property {
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 
 .notion-collection-row-value {
@@ -454,4 +455,8 @@
   .notion-header .menu-icon {
     display: none;
   }
+  .notion-header .nav-header {
+    align-items: center;
+  }
+  
 }
